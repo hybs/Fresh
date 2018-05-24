@@ -89,7 +89,15 @@
 					</div>
 				</li>
 				<li>
-					调料暂未上架
+					<div id="list6" class="list-content" v-for="row in list">
+						<div><img v-bind:src="row.imgsrc"></div>
+						<div>
+							<p>{{row.title}}</p>
+							<p><small>{{row.remarks}}</small></p>
+							<p><span>{{row.price}}</span></p>
+						</div>
+						<div class="shopping"><img src="img/ico/shopping.svg"></div>
+					</div>
 				</li>
 			</ul>
 		</div>
@@ -203,6 +211,17 @@
 						{name:'crucian',imgsrc:'img/goods/crucian.jpg',title:'野生淡水鱼 野生鲫鱼约500g（净膛）现杀4-6条',remarks:'满129元减20元',price:'￥26.90'},
 						{name:'bighead',imgsrc:'img/goods/bighead.jpg',title:'新鲜野生胖头鱼 大头鱼 鱼头做火锅 1条 5-6斤',remarks:'满299元减20元',price:'¥188.80'},
 						{name:'lobster',imgsrc:'img/goods/lobster.jpg',title:'清水鲜活小龙虾 1000g 约4-6钱只 1份 盒装',remarks:'满299元减30元',price:'¥58.80'}
+					]
+				}
+			});
+
+			new Vue({
+				el: '#list6',
+				data: {
+					list: [
+						{name:'chilli',imgsrc:'img/goods/chilli.jpg',title:'精致剁辣椒2.3kg蒸鱼剁椒酱湖南特产辣椒酱下饭菜',remarks:'满129元减20元',price:'￥27.50'},
+						{name:'garlic',imgsrc:'img/goods/garlic.jpg',title:'大蒜 2.5kg 农家大蒜头 可腌制糖醋蒜 干蒜',remarks:'满299元减20元',price:'¥19.90'},
+						{name:'ginger',imgsrc:'img/goods/ginger.jpg',title:'小黄姜6斤 生姜老姜调味食材 有机肥种植鲜姜',remarks:'满299元减30元',price:'¥29.80'}
 					]
 				}
 			});
