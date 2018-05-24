@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>生鲜超市</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+</head>
+<body>
+	<div class="container" style="display:block">
+		<div class="tab-head">
+			<ul>
+				<li class="selected-li">热卖</li>
+				<li class="normal-li">水果</li>
+				<li class="normal-li">肉蛋</li>
+				<li class="normal-li">蔬菜</li>
+				<li class="normal-li">水产</li>
+				<li class="normal-li">调料</li>
+			</ul>
+		</div>
+		<div class="tab-content">
+			<ul>
+				<li style="display:block">
+					<div class="swiper-container swiper1">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="img/hot/hot1.jpg"></div>
+							<div class="swiper-slide"><img src="img/hot/hot2.jpg"></div>
+							<div class="swiper-slide"><img src="img/hot/hot3.jpg"></div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+					<div class="list-title"><span>今日热卖</span></div>
+					<div id="list1" class="list-content" v-for="row in list">
+						<div><img v-bind:src="row.imgsrc"></div>
+						<div>
+							<p>{{row.title}}</p>
+							<p><small>{{row.remarks}}</small></p>
+							<p><span>{{row.price}}</span></p>
+						</div>
+						<div class="shopping"><img src="img/ico/shopping.svg"></div>
+					</div>
+				</li>
+				<li>
+					<div id="list2" class="list-content" v-for="row in list">
+						<div><img v-bind:src="row.imgsrc"></div>
+						<div>
+							<p>{{row.title}}</p>
+							<p><small>{{row.remarks}}</small></p>
+							<p><span>{{row.price}}</span></p>
+						</div>
+						<div class="shopping"><img src="img/ico/shopping.svg"></div>
+					</div>
+				</li>
+				<li>
+					<div id="list3" class="list-content" v-for="row in list">
+						<div><img v-bind:src="row.imgsrc"></div>
+						<div>
+							<p>{{row.title}}</p>
+							<p><small>{{row.remarks}}</small></p>
+							<p><span>{{row.price}}</span></p>
+						</div>
+						<div class="shopping"><img src="img/ico/shopping.svg"></div>
+					</div>
+				</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container">222</div>
+
+	<div class="container">333</div>
+
+	<div class="container">444</div>
+
+	<div class="footer">
+		<ul>
+			<li class="selected-li">
+				<div id="div1"><img src="img/ico/bottom-menu.png"></div>
+				<div><span>首页</span></div>
+			</li>
+			<li>
+				<div id="div2"><img src="img/ico/bottom-menu.png"></div>
+				<div><span>购物车</span></div>
+			</li>
+			<li>
+				<div id="div3"><img src="img/ico/bottom-menu.png"></div>
+				<div><span>微页</span></div>
+			</li>
+			<li>
+				<div id="div4"><img src="img/ico/bottom-menu.png"></div>
+				<div><span>我的</span></div>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('.tab-head ul li').click(function(){
+				var index = $(this).index();
+				$(this).removeClass('normal-li').addClass('selected-li');
+				$(this).siblings().removeClass('selected-li').addClass('normal-li');
+				var contents = $('.tab-content').find('li');
+				$(contents[index]).show();
+				$(contents[index]).siblings().hide();
+			});
+
+			new Vue({
+				el: '#list1',
+				data: {
+					list: [
+						{name:'apple',imgsrc:'img/goods/apple.jpg',title:'红富士苹果 12个 单果约140-170g 总重约1.9kg',remarks:'满129元减20元',price:'￥29.90'},
+						{name:'pitaya',imgsrc:'img/goods/pitaya.jpg',title:'红心火龙果 2个装 巨无霸大果 单果约600~700g',remarks:'满129元减20元',price:'￥39.90'},
+						{name:'hami',imgsrc:'img/goods/hami.jpg',title:'哈密瓜 1粒装 约1.25-1.75kg 新鲜水果',remarks:'满129元减20元',price:'￥26.90'}
+					]
+				}
+			});
+
+			new Vue({
+				el: '#list2',
+				data: {
+					list: [
+						{name:'apple',imgsrc:'img/goods/apple.jpg',title:'红富士苹果 12个 单果约140-170g 总重约1.9kg',remarks:'满129元减20元',price:'￥29.90'},
+						{name:'pitaya',imgsrc:'img/goods/pitaya.jpg',title:'红心火龙果 2个装 巨无霸大果 单果约600~700g',remarks:'满129元减20元',price:'￥39.90'},
+						{name:'hami',imgsrc:'img/goods/hami.jpg',title:'哈密瓜 1粒装 约1.25-1.75kg 新鲜水果',remarks:'满129元减20元',price:'￥26.90'}
+					]
+				}
+			});
+
+			new Vue({
+				el: '#list3',
+				data: {
+					list: [
+						{name:'egg',imgsrc:'img/goods/egg.png',title:'新鲜鸡蛋 土鸡蛋 农家散养30枚',remarks:'满129元减20元',price:'￥32.90'},
+						{name:'duck-egg',imgsrc:'img/goods/duck-egg.jpg',title:'田园居 农家包泥生咸鸭蛋20枚净重约1500g',remarks:'满199元减30元',price:'¥42.90'},
+						{name:'chicken',imgsrc:'img/goods/chicken.jpg',title:'老母鸡 1.5kg/袋整只装 林下散养',remarks:'满199元减30元',price:'¥49.90'}
+					]
+				}
+			});
+
+			new Swiper('.swiper1',{
+				loop: true,
+				pagination : '.swiper-pagination',
+				paginationType : 'custom',
+				paginationCustomRender: function (swiper, current, total) {
+				  return current + '/' + total;
+				}
+			});
+
+			$('.footer ul li').click(function(){
+				var index = $(this).index();
+				$(this).addClass('selected-li');
+				$(this).siblings().removeClass('selected-li');
+				var contents = $('.container');
+				$(contents[index]).show();
+				for(i=0;i<4;i++){
+					if(i!=index){
+						$(contents[i]).hide();
+					}
+				}
+			});
+		})
+	</script>
+</body>
+</html>
