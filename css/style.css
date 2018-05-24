@@ -195,10 +195,6 @@ ul {
 	vertical-align: middle;
 }
 
-.page .item0 p {
-	margin: 0;
-}
-
 .page .item0:before {
 	display: none;
 }
@@ -209,7 +205,11 @@ ul {
 
 .page .item:before {
 	margin-top: 16px;
-} 
+}
+
+.page .item0 p:nth-child(1) {
+	margin-left: 0;
+}
 
 .page {
 	background-color: #f2f2f2;
