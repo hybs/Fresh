@@ -182,10 +182,6 @@ ul {
 	color: gray;
 }
 
-.page .item span {
-
-}
-
 .page .item:before {
 	content: "";
 	width: 4px;
