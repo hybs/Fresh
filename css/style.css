@@ -156,3 +156,64 @@ ul {
 .container {
 	display: none;
 }
+
+.container .prompt {
+	font-size: 18px;
+	text-align: center;
+	margin-top: 60px;
+	color: #999;
+}
+
+.page .item1,.item2,.item3 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.page .item {
+	padding: 10px;
+	margin-bottom: 10px;
+	background-color: #fff;
+}
+
+.page .item small {
+	color: gray;
+}
+
+.page .item span {
+	color: #fdb484;
+}
+
+.page .item:before {
+	content: "";
+	width: 4px;
+	height: 18px;
+	background-color: #f32424;
+	position: absolute;
+	vertical-align: middle;
+}
+
+.page .item0 img {
+	vertical-align: middle;
+	width: 40px;
+}
+
+.page .item0 p {
+	margin: 0;
+}
+
+.page .item0:before {
+	display: none;
+}
+
+.page .item p:nth-child(1) {
+	margin-left: 16px;
+}
+
+.page .item:before {
+	margin-top: 16px;
+} 
+
+.page {
+	background-color: #f2f2f2;
+}
